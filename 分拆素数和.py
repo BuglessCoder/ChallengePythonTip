@@ -1,15 +1,18 @@
-n=2
-def sushu(a):
+n=10
+def isPrime(a):
+    flag = 0
     for i in range(2,a):
         if a%i==0:
-            return False;
+            flag = 1
             break;
-        return True;
+    if flag == 1:
+        return False
+    else:
+        return True
 count=0    
-for i in range(2,n//2):
-    if(sushu(i) and sushu(n-i)):
-                count+=1;
-                    
+for i in range(2,n//2+1):
+    if(isPrime(i) and isPrime(n-i) and i!=n-i):
+                count+=1;       
 print(count)              
       
     
